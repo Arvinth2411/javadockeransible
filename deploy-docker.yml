@@ -81,6 +81,7 @@
    - name: pull an image
      docker_image:
        name: arvinthganesan/javaapp
+       source: pull
 
    - name: Create default containers
      community.docker.docker_container:
