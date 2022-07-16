@@ -83,10 +83,11 @@
        name: arvinthganesan/javaapp
        source: pull
 
-   - name: Create default containers
-     community.docker.docker_container:
-        name: "{{ default_container_name }}{{ item }}"
-        image: "{{ default_container_image }}"
-        command: "{{ default_container_command }}"
-        state: present
-        with_sequence: count="{{ container_count }}"
+   - name: deploy docker container
+      docker_container:
+        image: nginx:stable
+        name: javaapp
+        state: started
+        auto_remove: true
+        ports:
+          - "8080:80"
