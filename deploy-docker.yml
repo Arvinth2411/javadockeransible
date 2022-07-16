@@ -2,6 +2,10 @@
 - hosts: dev
   become: True
   tasks:
+    - name: update repo
+      apt:
+       name: "*"
+       state: present
     - name: Install python pip
       apt:
         name: python-pip
