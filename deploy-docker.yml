@@ -5,7 +5,7 @@
   vars:
     container_count: 1
     default_container_name: javaapp
-    default_container_image: arvinthganesan/javaapp:tagname
+    default_container_image: arvinthganesan/javaapp:${DOCKER_TAG}
     default_container_command: sleep 1
   
   tasks:
