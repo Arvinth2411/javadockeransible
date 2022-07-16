@@ -41,7 +41,7 @@
         name: "{{item}}"
         state: present
         update_cache: yes
-      loop:
+     loop:
         - apt-transport-https
         - ca-certificates
         - curl
