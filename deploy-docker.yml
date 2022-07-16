@@ -84,7 +84,7 @@
         source: pull
 
    - name: Start the container
-      docker_container:
+     docker_container:
         name: javaapp
         image: "arvinthganesan/javaapp:{{DOCKER_TAG}}"
         state: started
