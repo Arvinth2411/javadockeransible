@@ -8,13 +8,13 @@
     default_container_image: arvinthganesan/javaapp
     default_container_command: sleep 1
   
-    - name: update repo
+   - name: update repo
      apt:
        name: "*"
        state: present
        
     
-    - name: Install required system packages
+   - name: Install required system packages
      apt:
         pkg:
           - apt-transport-https
@@ -30,12 +30,12 @@
        
        
        
-    - name: Install python pip
+   - name: Install python pip
       apt:
         name: python3-pip
         state: present
     
-    - name: installa dependency
+   - name: installa dependency
       apt:
         name: "{{item}}"
         state: present
@@ -47,17 +47,17 @@
         - gnupg-agent
         - software-properties-common
         
-    - name: add GPG key
+   - name: add GPG key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
         
-    - name: add docker repository to apt
+   - name: add docker repository to apt
       apt_repository:
         repo: deb https://download.docker.com/linux/ubuntu bionic stable
         state: present
         
-    - name: install docker
+   - name: install docker
       apt:
         name: "{{item}}"
         state: latest
@@ -67,22 +67,22 @@
         - docker-ce-cli
         - containerd.io
         
-    - name: assicurati che docker sia attivo
+   - name: assicurati che docker sia attivo
       service:
         name: docker
         state: started
         enabled: yes
         
-    - name: Install Docker Module for Python
+   - name: Install Docker Module for Python
       pip:
        name: docker
       
-    - name: Pull default Docker image
+   - name: Pull default Docker image
       community.docker.docker_image:
         name: "{{ default_container_image }}"
         source: pull
 
-    - name: Create default containers
+   - name: Create default containers
       community.docker.docker_container:
         name: "{{ default_container_name }}{{ item }}"
         image: "{{ default_container_image }}"
