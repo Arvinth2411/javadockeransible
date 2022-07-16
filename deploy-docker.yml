@@ -14,8 +14,8 @@
        state: present
        
     
-    - name: Install required system packages
-      apt:
+   - name: Install required system packages
+     apt:
         pkg:
           - apt-transport-https
           - ca-certificates
