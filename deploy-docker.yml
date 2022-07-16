@@ -8,10 +8,10 @@
     default_container_image: arvinthganesan/javaapp
     default_container_command: sleep 1
   
-   - name: update repo
-     apt:
-       name: "*"
-       state: present
+  - name: update repo
+    apt:
+     name: "*"
+     state: present
        
     
    - name: Install required system packages
