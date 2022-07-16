@@ -6,6 +6,24 @@
       apt:
        name: "*"
        state: present
+       
+    
+    - name: Install required system packages
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - virtualenv
+          - python3-setuptools
+        state: latest
+        update_cache: true
+       
+       
+       
+       
+       
     - name: Install python pip
       apt:
         name: python3-pip
