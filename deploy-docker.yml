@@ -13,7 +13,6 @@
        name: "*"
        state: present
        
-    
    - name: Install required system packages
      apt:
         pkg:
@@ -25,10 +24,6 @@
           - python3-setuptools
         state: latest
         update_cache: true
-       
-       
-       
-       
        
     - name: Install python pip
       apt:
