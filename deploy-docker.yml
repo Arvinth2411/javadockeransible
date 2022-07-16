@@ -83,10 +83,10 @@
         name: "{{ default_container_image }}"
         source: pull
 
-   - name: Create default container
-     community.docker.docker_container:
-        name: "{{ default_container_name }}{{ item }}"
-        image: "{{ default_container_image }}"
-        command: "{{ default_container_command }}"
-        state: present
-        with_sequence: count="{{ container_count }}"
+   - name: Start the container
+      docker_container:
+        name: javaapp
+        image: "arvinthganesan/javaapp:{{DOCKER_TAG}}"
+        state: started
+        published_ports:
+          - 0.0.0.0:8080:8080
