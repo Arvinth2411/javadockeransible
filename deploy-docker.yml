@@ -49,11 +49,11 @@
         state: started
         enabled: yes
         
-        
-    - name: Install docker-py python module
+    - name: Install Docker Module for Python
       pip:
-        name: docker-py
-        state: present
+      name: docker
+      
+    
         
     - name: Start the container
       docker_container:
