@@ -84,7 +84,7 @@
        source: pull
 
    - name: deploy docker container
-      docker_container:
+     docker_container:
         image: javaapp:stable
         name: javaapp
         state: started
